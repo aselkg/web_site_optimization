@@ -1,55 +1,49 @@
 ## Website Performance Optimization portfolio project
 
-Your challenge, if you wish to accept it (and we sure hope you will), is to optimize this online portfolio for speed! In particular, optimize the critical rendering path and make this page render as quickly as possible by applying the techniques you've picked up in the [Critical Rendering Path course](https://www.udacity.com/course/ud884).
+Access the website here: [here]( https://github.com/aselkg/web_site_optimization/)
 
-To get started, check out the repository and inspect the code.
+## Getting Ready
+* verify node is installed, can do `node -v` to check version, if doesn't error we are good.
+* update npm to latest version `npm update -g npm`
+* create a directory for you project and cd into it.
+* once in your directory install grunt-cli `npm install -g grunt-cli`
 
-### Getting started
+### Install Required Apps for Image Minification
+* Download and install [graphicsmagick](http://www.graphicsmagick.org/download.html)
+* Download and install [ghostscript](https://www.ghostscript.com/download/gsdnld.html)
+* Download and install [imagemagick](https://www.imagemagick.org/script/download.php) Make sure to check the option 'Install legacy utils'
+* On windows. Install `gm` with `npm install -g gm`
+* Restart system
 
-#### Part 1: Optimize PageSpeed Insights score for index.html
+## Clone the Repo
+* Clone `git clone https://github.com/aselkg/website_optimization.git` 
+* Run `npm install` to install all required packages from package.json file
+* Run grunt to start minification by `grunt` if task is default or `grunt responsive_images`
 
-Some useful tips to help you get started:
+## Used Resources 
+* [CSS Minifier](https://cssminifier.com/) 
+* [HTML Minifier](https://html-minifier.com/)
+* [JavaScript Comressor](https://jscompress.com/)
+* [Udacity Forums](https://discussions.udacity.com/)
+* [Slack Overflow](https://stackoverflow.com/)
 
-1. Check out the repository
-1. To inspect the site on your phone, you can run a local server
 
-  ```bash
-  $> cd /path/to/your-project-folder
-  $> python -m SimpleHTTPServer 8080
-  ```
+## Optimizations
 
-1. Open a browser and visit localhost:8080
-1. Download and install [ngrok](https://ngrok.com/) to the top-level of your project directory to make your local server accessible remotely.
+### index.html 
 
-  ``` bash
-  $> cd /path/to/your-project-folder
-  $> ./ngrok http 8080
-  ```
+* Added async attribute to the google analytics script
+* Reduced image size with [Grunt](https://www.npmjs.com/package/grunt-responsive-images)
+* Inlined css into html file
+* Minified css with [CSS Minifier](https://cssminifier.com/) 
+* Minified html [HTML Minifier](https://html-minifier.com/)
+* Minified js [JavaScript Comressor](https://jscompress.com/)
 
-1. Copy the public URL ngrok gives you and try running it through PageSpeed Insights! Optional: [More on integrating ngrok, Grunt and PageSpeed.](http://www.jamescryer.com/2014/06/12/grunt-pagespeed-and-ngrok-locally-testing/)
 
-Profile, optimize, measure... and then lather, rinse, and repeat. Good luck!
+### pizza.html
 
-#### Part 2: Optimize Frames per Second in pizza.html
-
-To optimize views/pizza.html, you will need to modify views/js/main.js until your frames per second rate is 60 fps or higher. You will find instructive comments in main.js. 
-
-You might find the FPS Counter/HUD Display useful in Chrome developer tools described here: [Chrome Dev Tools tips-and-tricks](https://developer.chrome.com/devtools/docs/tips-and-tricks).
-
-### Optimization Tips and Tricks
-* [Optimizing Performance](https://developers.google.com/web/fundamentals/performance/ "web performance")
-* [Analyzing the Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/analyzing-crp.html "analyzing crp")
-* [Optimizing the Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/optimizing-critical-rendering-path.html "optimize the crp!")
-* [Avoiding Rendering Blocking CSS](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-blocking-css.html "render blocking css")
-* [Optimizing JavaScript](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript.html "javascript")
-* [Measuring with Navigation Timing](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/measure-crp.html "nav timing api"). We didn't cover the Navigation Timing API in the first two lessons but it's an incredibly useful tool for automated page profiling. I highly recommend reading.
-* <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/eliminate-downloads.html">The fewer the downloads, the better</a>
-* <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/optimize-encoding-and-transfer.html">Reduce the size of text</a>
-* <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/image-optimization.html">Optimize images</a>
-* <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching.html">HTTP caching</a>
-
-### Customization with Bootstrap
-The portfolio was built on Twitter's <a href="http://getbootstrap.com/">Bootstrap</a> framework. All custom styles are in `dist/css/portfolio.css` in the portfolio repo.
-
-* <a href="http://getbootstrap.com/css/">Bootstrap's CSS Classes</a>
-* <a href="http://getbootstrap.com/components/">Bootstrap's Components</a>
+* `document.querySelector` was replaced by `document.getElementbyID` or `document.getElementsbyClassName`
+* Reduced image size with [Grunt](https://www.npmjs.com/package/grunt-responsive-images)
+* Minified css with [CSS Minifier](https://cssminifier.com/) 
+* Minified html [HTML Minifier](https://html-minifier.com/)
+* Minified js [JavaScript Comressor](https://jscompress.com/)
