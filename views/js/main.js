@@ -525,7 +525,7 @@ function updatePositions() {
     // Avoid layout thrashing per
     // https://developers.google.com/web/fundamentals/performance/rendering/avoid-large-complex-layouts-and-layout-thrashing#avoid-layout-thrashing
     // Read the scrollTop first
-    var scrollTop = document.body.scrollTop;
+    var scrollTop = document.scrollingElement.scrollTop;
     var items = document.getElementsByClassName('mover');
     var phase = [];
 
@@ -557,7 +557,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var cols = 8;
     var s = 256;
     // Only create moving pizzas based on the innenHeight of the window
-    var numPizzas = (window.innerHeight / 125) * 5;
+    var numPizzas = height / s * cols;
     console.log(numPizzas);
     var docFrag = document.createDocumentFragment();
     var movingPizzas = document.getElementById("movingPizzas1");
